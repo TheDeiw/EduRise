@@ -71,6 +71,7 @@ function renderSchools(filteredSchools) {
     card.className = 'school-card';
     card.innerHTML = `
       <h3>${school.name}</h3>
+      <img src="assets/img/School.jpg" alt="${school.name}">
       <p><strong>Тип:</strong> ${school.institutionType.map(type => ({
         school: 'Школа',
         college: 'Коледж',
@@ -172,7 +173,7 @@ function setupCategoryFilter() {
       const value = e.target.dataset.value;
       const text = e.target.textContent;
       if (!selectedCategories.querySelector(`.category-tag[data-value="${value}"]`)) {
-        const tag = document.createElement('div');
+        const tag = document.createElement>('div');
         tag.className = 'category-tag';
         tag.dataset.value = value;
         tag.innerHTML = `${text} <span class="remove-tag">×</span>`;

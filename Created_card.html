@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма для інвестицій</title>
+  <link rel="stylesheet" href="css/Created_card.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Форма заповнення даних про інвестицію</h1>
+    <form id="investmentForm">
+      
+      <!-- Назва пропозиції -->
+      <div class="form-group">
+        <label for="proposalName">Назва пропозиції <span class="required">*</span></label>
+        <input type="text" id="proposalName" name="proposalName" placeholder="Наприклад, створити гурток робототехніки" required>
+      </div>
+
+      <!-- Опис пропозиції -->
+      <div class="form-group">
+        <label for="proposalDescription">Опис пропозиції <span class="required">*</span></label>
+        <textarea id="proposalDescription" name="proposalDescription" rows="4" required placeholder="Детальний опис мети, потреб, впливу на освіту"></textarea>
+      </div>
+
+      <!-- Орієнтація на тип закладу -->
+      <div class="form-group">
+        <label>Орієнтація на тип закладу <span class="required">*</span></label>
+        <div class="custom-select">
+          <div class="select-box" id="selectBox">Оберіть тип</div>
+          <input type="hidden" id="institutionType" name="institutionType">
+          <ul class="select-dropdown hidden" id="selectDropdown">
+            <li>
+              <label><input type="checkbox" name="institutionType" value="school"> Школа</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="institutionType" value="college"> Коледж</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="institutionType" value="university"> Університет</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="institutionType" value="vocational"> Професійна освіта</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="institutionType" value="vocational"> Центр позашкільної освіти</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="institutionType" value="vocational"> Студентська профспілка</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="institutionType" value="other" id="institutionTypeOther"> Інше</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Категорія проєкту -->
+      <div class="form-group">
+        <label for="Category">Категорія проєкту <span class="required">*</span></label>
+        <input type="text" id="Category" name="Category" placeholder="Наприклад, гурток, тренінги, майстерклас, обладнання">
+      </div>
+
+      <!-- Географічний фокус -->
+      <div class="form-group">
+        <label for="geoFocus">Географічний фокус пропозиції <span class="required">*</span></label>
+        <div class="custom-select">
+          <div class="select-box" id="geoFocusSelectBox">Оберіть регіон</div>
+          <input type="hidden" id="geoFocus" name="geoFocus">
+          <ul class="select-dropdown hidden" id="geoFocusSelectDropdown">
+            <li data-value="">Оберіть регіон</li>
+            <li data-value="vinnytsia">Вінницька область</li>
+            <li data-value="volyn">Волинська область</li>
+            <li data-value="dnipropetrovsk">Дніпропетровська область</li>
+            <li data-value="donetsk">Донецька область</li>
+            <li data-value="zhytomyr">Житомирська область</li>
+            <li data-value="zakarpattia">Закарпатська область</li>
+            <li data-value="zaporizhzhia">Запорізька область</li>
+            <li data-value="ivano-frankivsk">Івано-Франківська область</li>
+            <li data-value="kyiv-region">Київська область</li>
+            <li data-value="kirovohrad">Кіровоградська область</li>
+            <li data-value="luhansk">Луганська область</li>
+            <li data-value="lviv">Львівська область</li>
+            <li data-value="mykolaiv">Миколаївська область</li>
+            <li data-value="odesa">Одеська область</li>
+            <li data-value="poltava">Полтавська область</li>
+            <li data-value="rivne">Рівненська область</li>
+            <li data-value="sumy">Сумська область</li>
+            <li data-value="ternopil">Тернопільська область</li>
+            <li data-value="kharkiv">Харківська область</li>
+            <li data-value="kherson">Херсонська область</li>
+            <li data-value="khmelnytskyi">Хмельницька область</li>
+            <li data-value="cherkasy">Черкаська область</li>
+            <li data-value="chernivtsi">Чернівецька область</li>
+            <li data-value="chernihiv">Чернігівська область</li>
+            <li data-value="crimea">Автономна Республіка Крим</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Термін реалізації -->
+      <div class="form-group">
+        <label for="timeline">Термін реалізації</label>
+        <input type="text" id="timeline" name="timeline" placeholder="Очікуваний термін реалізації" required>
+      </div>
+
+      <!-- Очікувані результати -->
+      <div class="form-group">
+        <label for="expectedResults">Очікувані результати</label>
+        <textarea id="expectedResults" name="expectedResults" rows="4" required placeholder="Конкретні результати чи показники успіху"></textarea>
+      </div>
+
+      <!-- Додаткові матеріали -->
+      <div class="form-group">
+        <label for="additionalMaterials">Додаткові матеріали</label>
+        <input type="file" id="additionalMaterials" name="additionalMaterials" multiple accept=".pdf,.jpg,.jpeg,.png,.mp4">
+      </div>
+
+      <!-- Кнопка відправки -->
+      <div class="form-group">
+        <button type="submit" class="submit-btn">Відправити</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="js/Created_card.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Форма реєстрації</title>
+  <link rel="stylesheet" href="css/registration_bisnes.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Реєстрація освітньої установи</h1>
+    <form id="registerForm">
+      <!-- Назва закладу/компанії -->
+      <div class="form-group">
+        <label for="companyName">Назва установи <span class="required">*</span></label>
+        <input type="text" id="companyName" name="companyName" placeholder="Назва установи" required>
+      </div>
+
+      <!-- Тип закладу -->
+      <div class="form-group">
+        <label for="institutionType">Тип установи <span class="required">*</span></label>
+        <div class="custom-select">
+          <div class="select-box" id="selectBox">Оберіть тип</div>
+          <input type="hidden" id="institutionType" name="institutionType" required>
+          <ul class="select-dropdown hidden" id="selectDropdown">
+            <li hidden data-value="">Оберіть тип</li>
+            <li data-value="school">Школа</li>
+            <li data-value="college">Коледж</li>
+            <li data-value="university">Університет</li>
+            <li data-value="vocational">Професійна освіта</li>
+            <li data-value="vocational">Центр позашкільної освіти</li>
+            <li data-value="vocational">Студентська профспілка</li>
+            <li data-value="other">Інше</li>
+          </ul>
+        </div>
+      </div>
+      <div class="form-group hidden" id="institutionTypeOtherInput">
+        <label for="institutionTypeCustom">Вкажіть тип установи</label>
+        <input type="text" id="institutionTypeCustom" name="institutionTypeCustom" placeholder="Вкажіть тип установи">
+      </div>
+
+      <!-- Місцезнаходження -->
+      <div class="form-group">
+        <label for="location">Місцезнаходження <span class="required">*</span></label>
+        <input type="text" id="location" name="location" placeholder="Місто, країна, адреса" required>
+      </div>
+
+      <!-- Контактна інформація -->
+      <div class="form-group">
+        <label for="contactName">Ім’я контактної особи <span class="required">*</span></label>
+        <input type="text" id="contactName" name="contactName" placeholder="Ім’я" required>
+      </div>
+      <div class="form-group email-group">
+        <label for="contactEmail">Електронна пошта <span class="required" style="margin: 0 0 0 4%;">*</span></label>
+        <input type="email" id="contactEmail" name="contactEmail" placeholder="name@gmail.com" required>
+        <span class="info-icon email-info-icon" data-tooltip="Електронна пошта має бути з офіційного домену установи">i</span>
+      </div>
+      <div class="form-group">
+        <label for="contactPhone">Телефон <span class="required">*</span></label>
+        <input type="tel" id="contactPhone" name="contactPhone" placeholder="0665807845" required>
+      </div>
+
+      <!-- Пароль -->
+      <div class="form-group password-group">
+        <label for="password">Пароль <span class="required" style="margin: 0 0 0 4%;">*</span></label>
+        <input type="password" id="password" name="password" placeholder="Введіть пароль" required>
+        <span class="info-icon pas-info-icon" data-tooltip="Пароль має містити великі та малі літери та цифри">i</span>
+        <button type="button" class="toggle-password" data-target="password">
+          <img class="button-eye" src="assets/img/eye-off.svg" alt="Показати пароль">
+        </button>
+      </div>
+
+      <!-- Підтвердження пароля -->
+      <div class="form-group password-group">
+        <label for="confirmPassword">Підтвердження пароля <span class="required" style="margin: 0 0 0 4%;">*</span></label>
+        <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Підтвердіть пароль" required>
+        <span class="info-icon conPas-info-icon" data-tooltip="Пароль має містити великі та малі літери та цифри">i</span>
+        <button type="button" class="toggle-password" data-target="confirmPassword">
+          <img class="button-eye" src="assets/img/eye-off.svg" alt="Показати пароль">
+        </button>
+      </div>
+
+      <!-- Кнопка реєстрації -->
+      <div class="form-group">
+        <button type="submit" class="submit-btn">Зареєструватись</button>
+      </div>
+    </form>
+  </div>
+
+  <script src="js/registration.js"></script>
+</body>
+</html>

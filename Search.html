@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Школи для співпраці</title>
+  <link rel="stylesheet" href="css/Search.css">
+</head>
+<body>
+  <div class="container">
+    <div class="sidebar">
+      <h2>Фільтри</h2>
+      <!-- Тип закладу -->
+      <div class="form-group">
+        <label>Тип закладу</label>
+        <div class="custom-select">
+          <div class="select-box" id="institutionTypeSelectBox">Оберіть тип</div>
+          <ul class="select-dropdown hidden" id="institutionTypeSelectDropdown">
+            <li>
+              <label><input type="checkbox" name="institutionTypeFilter" value="school"> Школа</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="institutionTypeFilter" value="college"> Коледж</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="institutionTypeFilter" value="university"> Університет</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="institutionTypeFilter" value="vocational"> Професійна освіта</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="institutionTypeFilter" value="other"> Інше</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Географічний фокус -->
+      <div class="form-group">
+        <label>Географічний фокус</label>
+        <div class="custom-select">
+          <div class="select-box" id="geoFocusSelectBox">Оберіть регіон</div>
+          <ul class="select-dropdown hidden" id="geoFocusSelectDropdown">
+            <li>
+              <label><input type="checkbox" name="geoFocusFilter" value="vinnytsia"> Вінницька область</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="geoFocusFilter" value="kyiv-region"> Київська область</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="geoFocusFilter" value="lviv"> Львівська область</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="geoFocusFilter" value="odesa"> Одеська область</label>
+            </li>
+            <li>
+              <label><input type="checkbox" name="geoFocusFilter" value="kharkiv"> Харківська область</label>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <!-- Категорія проєкту -->
+      <div class="form-group">
+        <label>Категорія проєкту</label>
+        <div class="custom-select">
+          <input type="text" id="categoryFilterInput" placeholder="Пошук категорій...">
+          <ul id="categoryFilterList" class="category-list hidden">
+            <li><a href="#" data-value="equipment">Обладнання</a></li>
+            <li><a href="#" data-value="programs">Навчальні програми</a></li>
+            <li><a href="#" data-value="scholarships">Стипендії</a></li>
+            <li><a href="#" data-value="technology">Технології</a></li>
+            <li><a href="#" data-value="other">Інше</a></li>
+          </ul>
+        </div>
+        <div id="selectedCategories" class="selected-categories"></div>
+      </div>
+    </div>
+    <div class="main-content">
+      <input type="text" id="searchInput" placeholder="Пошук за назвою закладу...">
+      <div class="school-grid" id="schoolGrid"></div>
+    </div>
+  </div>
+  <script src="js/Search.js"></script>
+</body>
+</html>

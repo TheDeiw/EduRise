@@ -1,0 +1,220 @@
+
+   body {
+    background-color: #E3F4FF;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  .container {
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+    margin: 50px 0;
+  }
+  
+  .container h1 {
+    text-align: center;
+    font-size: 28px;
+    margin-bottom: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    position: relative;
+  }
+  
+  .form-group label {
+    display: block;
+    font-size: 14px;
+    color: #374151;
+    margin-bottom: 5px;
+  }
+  
+  .form-group .required {
+    color: #ef4444;
+  }
+  
+  .form-group input,
+  .form-group select {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    font-size: 14px;
+  }
+  
+  .form-group input:focus,
+  .form-group select:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  }
+
+   .form-group.hidden {
+    display: none;
+    margin-top: 20px;
+  }
+  
+  .custom-select {
+    position: relative;
+    width: 100%;
+  }
+  
+  .select-box {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    font-size: 14px;
+    background-color: white;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .select-box:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+  }
+  
+  .select-box::after {
+    content: '▼';
+    font-size: 12px;
+    color: #6b7280;
+  }
+  
+  .select-dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    border: 1px solid #d1d5db;
+    border-radius: 5px;
+    max-height: 8em; 
+    overflow-y: auto;
+    z-index: 10;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .select-dropdown.hidden {
+    display: none;
+  }
+  
+  .select-dropdown li {
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .select-dropdown li:hover {
+    background-color: #f3f4f6;
+  }
+  
+  .email-group,
+  .password-group {
+    position: relative;
+  }
+  
+  .email-group input,
+  .password-group input {
+    padding-right: 60px; 
+  }
+  
+  .info-icon {
+    position: absolute;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #6b7280;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 10px;
+    font-weight: bold;
+    cursor: help;
+  }
+
+  .email-info-icon{
+    right: 76%;;
+    top: 13%;
+  }
+
+  .pas-info-icon{
+    right: 88%;
+    top: 13%;
+  }
+
+  .conPas-info-icon{
+    right: 71%;
+    top: 13%;
+  }
+  
+  .info-icon:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #374151;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    white-space: nowrap;
+    z-index: 10;
+  }
+  
+  .toggle-password {
+    position: absolute;
+    right: 3%;
+    top: 67%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+  }
+  
+  .toggle-password img.button-eye {
+    width: 2vh;
+    height: 2vh;
+  }
+  
+  .submit-btn {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    background-color: #ffbb00;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .submit-btn:hover {
+    background-color: #ffa600;
+  }
+  
+  input.border-red-500 {
+    border-color: #ef4444;
+  }
+
+  
