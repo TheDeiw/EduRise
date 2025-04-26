@@ -3,82 +3,125 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
   <title>Школи для співпраці</title>
   <link rel="stylesheet" href="css/Search.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
-  <div class="container">
-    <div class="sidebar">
-      <h2>Фільтри</h2>
-      <!-- Тип закладу -->
-      <div class="form-group">
-        <label>Тип закладу</label>
-        <div class="custom-select">
-          <div class="select-box" id="institutionTypeSelectBox">Оберіть тип</div>
-          <ul class="select-dropdown hidden" id="institutionTypeSelectDropdown">
-            <li>
-              <label><input type="checkbox" name="institutionTypeFilter" value="school"> Школа</label>
+<body class="page">
+  <div class="wrapper">
+    <header class="header">
+      <div class="header__container">
+        <a href="#" class="header__logo"> <img class="logo__image" src="assets/favicon/Favicon.svg"> </a>
+        <button class="header__menu_icon">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+        <nav class="header__menu menu">
+          <ul class="menu__list">
+            <li class="menu__item">
+              <a href="#" class="menu__link" data-key="about_me">Головна</a>
             </li>
-            <li>
-              <label><input type="checkbox" name="institutionTypeFilter" value="college"> Коледж</label>
+            <li class="menu__item">
+              <a href="#" class="menu__link" data-key="games">Реалізовані проєкти</a>
             </li>
-            <li>
-              <label><input type="checkbox" name="institutionTypeFilter" value="university"> Університет</label>
+            <li class="menu__item">
+              <a href="#" class="menu__link" data-key="projects">Заявки</a>
             </li>
-            <li>
-              <label><input type="checkbox" name="institutionTypeFilter" value="vocational"> Професійна освіта</label>
-            </li>
-            <li>
-              <label><input type="checkbox" name="institutionTypeFilter" value="other"> Інше</label>
+            <li class="menu__item">
+              <a href="#" style="color:blue" class="menu__link" data-key="projects">Подати заявку</a>
             </li>
           </ul>
+        </nav>
+        <a href="" class="header__auth">Авторизація</a>
+      </div>
+    </header>
+  </div>
+  <main class="main">
+    <div class="container">
+      <div class="sidebar">
+        <h2>Фільтри</h2>
+        <!-- Тип закладу -->
+        <div class="form-group">
+          <label>Тип закладу</label>
+          <div class="custom-select">
+            <div class="select-box" id="institutionTypeSelectBox">Оберіть тип</div>
+            <ul class="select-dropdown hidden" id="institutionTypeSelectDropdown">
+              <li>
+                <label><input type="checkbox" name="institutionTypeFilter" value="school"> Школа</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="institutionTypeFilter" value="college"> Коледж</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="institutionTypeFilter" value="university"> Університет</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="institutionTypeFilter" value="vocational"> Професійна освіта</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="institutionTypeFilter" value="other"> Інше</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Географічний фокус -->
+        <div class="form-group">
+          <label>Географічний фокус</label>
+          <div class="custom-select">
+            <div class="select-box" id="geoFocusSelectBox">Оберіть регіон</div>
+            <ul class="select-dropdown hidden" id="geoFocusSelectDropdown">
+              <li>
+                <label><input type="checkbox" name="geoFocusFilter" value="vinnytsia"> Вінницька область</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="geoFocusFilter" value="kyiv-region"> Київська область</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="geoFocusFilter" value="lviv"> Львівська область</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="geoFocusFilter" value="odesa"> Одеська область</label>
+              </li>
+              <li>
+                <label><input type="checkbox" name="geoFocusFilter" value="kharkiv"> Харківська область</label>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Категорія проєкту -->
+        <div class="form-group">
+          <label>Категорія проєкту</label>
+          <div class="custom-select">
+            <input type="text" id="categoryFilterInput" placeholder="Пошук категорій...">
+            <ul id="categoryFilterList" class="category-list hidden">
+              <li><a href="#" data-value="equipment">Обладнання</a></li>
+              <li><a href="#" data-value="programs">Навчальні програми</a></li>
+              <li><a href="#" data-value="scholarships">Стипендії</a></li>
+              <li><a href="#" data-value="technology">Технології</a></li>
+              <li><a href="#" data-value="other">Інше</a></li>
+            </ul>
+          </div>
+          <div id="selectedCategories" class="selected-categories"></div>
         </div>
       </div>
-      <!-- Географічний фокус -->
-      <div class="form-group">
-        <label>Географічний фокус</label>
-        <div class="custom-select">
-          <div class="select-box" id="geoFocusSelectBox">Оберіть регіон</div>
-          <ul class="select-dropdown hidden" id="geoFocusSelectDropdown">
-            <li>
-              <label><input type="checkbox" name="geoFocusFilter" value="vinnytsia"> Вінницька область</label>
-            </li>
-            <li>
-              <label><input type="checkbox" name="geoFocusFilter" value="kyiv-region"> Київська область</label>
-            </li>
-            <li>
-              <label><input type="checkbox" name="geoFocusFilter" value="lviv"> Львівська область</label>
-            </li>
-            <li>
-              <label><input type="checkbox" name="geoFocusFilter" value="odesa"> Одеська область</label>
-            </li>
-            <li>
-              <label><input type="checkbox" name="geoFocusFilter" value="kharkiv"> Харківська область</label>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <!-- Категорія проєкту -->
-      <div class="form-group">
-        <label>Категорія проєкту</label>
-        <div class="custom-select">
-          <input type="text" id="categoryFilterInput" placeholder="Пошук категорій...">
-          <ul id="categoryFilterList" class="category-list hidden">
-            <li><a href="#" data-value="equipment">Обладнання</a></li>
-            <li><a href="#" data-value="programs">Навчальні програми</a></li>
-            <li><a href="#" data-value="scholarships">Стипендії</a></li>
-            <li><a href="#" data-value="technology">Технології</a></li>
-            <li><a href="#" data-value="other">Інше</a></li>
-          </ul>
-        </div>
-        <div id="selectedCategories" class="selected-categories"></div>
+      <div class="main-content">
+        <input type="text" id="searchInput" placeholder="Пошук за назвою закладу...">
+        <div class="school-grid" id="schoolGrid"></div>
       </div>
     </div>
-    <div class="main-content">
-      <input type="text" id="searchInput" placeholder="Пошук за назвою закладу...">
-      <div class="school-grid" id="schoolGrid"></div>
-    </div>
+  </main>
+  <div class="wrapper">
+    <footer class="footer">
+      <div class="footer__container">
+        <p class="footer__text">© 2025 EduRise. Усі права захищені.</p>
+        <a href="mailto:info@edurise.ua" class="footer__link">info@edurise.ua</a>
+      </div>
+    </footer>
   </div>
   <script src="js/Search.js"></script>
+  <script src="js/header.js"></script>
 </body>
 </html>

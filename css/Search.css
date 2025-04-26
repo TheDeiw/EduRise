@@ -1,7 +1,24 @@
 body {
   background-color: #f3f4f6;
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Geologica', sans-serif;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.main {
+  flex: 1 0 auto;
+}
+
+.wrapper {
+  flex: 0 0 auto;
 }
 
 .container {
@@ -121,28 +138,27 @@ body {
   box-sizing: border-box;
 }
 
-/* Адаптивна ширина пошукового поля */
 @media (min-width: 1200px) {
   #searchInput {
-    max-width: 1020px; /* 4 картки: (4 * 250px) + (3 * 20px) = 1000px + 20px padding */
+    max-width: 1020px;
   }
 }
 
 @media (max-width: 1199px) and (min-width: 900px) {
   #searchInput {
-    max-width: 760px; /* 3 картки: (3 * 250px) + (2 * 20px) = 750px + 10px padding */
+    max-width: 760px;
   }
 }
 
 @media (max-width: 899px) and (min-width: 600px) {
   #searchInput {
-    max-width: 520px; /* 2 картки: (2 * 250px) + (1 * 20px) = 520px */
+    max-width: 520px;
   }
 }
 
 @media (max-width: 599px) {
   #searchInput {
-    max-width: 250px; /* 1 картка: 250px */
+    max-width: 250px;
   }
 }
 

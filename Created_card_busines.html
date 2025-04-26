@@ -3,10 +3,40 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
   <title>Форма для інвестицій</title>
   <link rel="stylesheet" href="css/Created_card.css">
+  <link rel="stylesheet" href="css/header-footer.css">
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
+  <header class="header">
+    <div class="header__container">
+      <a href="#" class="header__logo"> <img class="logo__image" src="assets/favicon/Favicon.svg"> </a>
+              <button class="header__menu_icon">
+                  <span></span>
+                  <span></span>
+                  <span></span>
+              </button>
+      <nav class="header__menu menu">
+        <ul class="menu__list">
+          <li class="menu__item">
+            <a href="#" class="menu__link" data-key="about_me">Головна</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link" data-key="games">Реалізовані проєкти</a>
+          </li>
+          <li class="menu__item">
+            <a href="#" class="menu__link" data-key="projects">Заявки</a>
+          </li>
+                      <li class="menu__item">
+            <a href="#" style="color:blue" class="menu__link" data-key="projects">Подати заявку</a>
+          </li>
+        </ul>
+      </nav>
+              <a href="" class="header__auth">Авторизація</a>
+    </div>
+  </header>
   <div class="container">
     <h1>Форма заповнення даних про інвестицію</h1>
     <form id="investmentForm">
@@ -122,7 +152,7 @@
       </div>
     </form>
   </div>
-
+<script src="js/header.js"></script>
   <script src="js/Created_card.js"></script>
 </body>
 </html>
