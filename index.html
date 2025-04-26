@@ -5,20 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     <title>EduRise - Головна</title>
+    <link rel="stylesheet" href="css/header-footer.css">
     <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
     <div class="wrapper">
 		<header class="header">
 			<div class="header__container">
 				<a href="#" class="header__logo"> <img class="logo__image" src="assets/favicon/Favicon.svg"> </a>
+                <button class="header__menu_icon">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
 				<nav class="header__menu menu">
 					<ul class="menu__list">
 						<li class="menu__item">
 							<a href="#" class="menu__link" data-key="about_me">Головна</a>
 						</li>
 						<li class="menu__item">
-							<a href="#" class="menu__link" data-key="games">Про проєкт</a>
+							<a href="#" class="menu__link" data-key="games">Реалізовані проєкти</a>
 						</li>
 						<li class="menu__item">
 							<a href="#" class="menu__link" data-key="projects">Заявки</a>
@@ -36,16 +43,106 @@
             <div class="main__container">
                 <div class="main__content">
                     <div class="main__text">
-                        <h1 class="main__title">Інвестуй в освіту —<br><span class="indented">відбудуй Україну!</span></h1>
-                        <p class="main__description">Платформа для розвитку та навчання дітей</p>
-                        <a href="#" class="main__button">Дізнатися більше</a>
+                        <h1 class="main__title">Світанок нових можливостей<br> починається з освіти</h1>
+                        <p class="main__description">З EduRise освітні організації отримують підтримку бізнесів для навчальних проєктів. Долучайтесь, щоб створювати ініціативи, які надихають молодь.</p>
                     </div>
                     <img class="main__image" src="assets/img/Illustration.svg" alt="Main Image">
+                    <div class="main__buttons">
+                        <a href="#" class="main__button">Подати заявку</a>
+                        <a href="#" class="main__button">Знайти гуртки</a>
+                    </div>
                 </div>
             </div>
             <div class="background_gradient1"></div>
             <div class="background_gradient2"></div>
         </main>
+
+        <section class="mission">
+            <div class="mission__container">
+                    <div class="mission__text">
+                        <h2 class="mission_title">Місія EduRise:</h2>
+                        <p class="mission__description">трансформувати освіту в Україні, долаючи бар’єри недофінансування та надаючи навчальним закладам ресурси для створення сучасних програм, які відповідають потребам ринку. Ми об’єднуємо бізнеси та навчальні заклади для розвитку суспільства, формування нового покоління професіоналів і створення платформи, яка поєднує локальні ініціативи з глобальними можливостями.</p>
+                    </div>
+                    <img class="mission__image" src="assets/img/Mission.svg" alt="Mission Image">
+            </div>
+        </section>
+
+        <section class="how">
+            <div class="how__container">
+                <h2 class="advantages__title">Як інвестувати у навчальний заклад</h2>
+                <div class="how__blocks">
+                    <div class="blocks__block">
+                        <h3 class="blockhow__title">1. Зареєструйтесь</h3>
+                        <p class="blockhow__description">Заповніть інформацію про себе. Ми рекомендуємо підтвердити організацію</p>
+                    </div>
+                    <div class="blocks__block">
+                        <h3 class="blockhow__title">2. Заповніть заяву</h3>
+                        <p class="blockhow__description">У каталозі за допомогою фільтрів можна знайти заяву, що вас зацікавить </p>
+                    </div>
+                    <div class="blocks__block">
+                        <h3 class="blockhow__title">3. Відправте</h3>
+                        <p class="blockhow__description">Кожна заява має детальну інформацію для себе. Рекомендуємо оглянути прикріплені файли до заяви</p>
+                    </div>
+                    <div class="blocks__block">
+                        <h3 class="blockhow__title">4. Чекайте</h3>
+                        <p class="blockhow__description">Сконтактуйтеся з організацією для подальшої справпраці</p>
+                    </div>
+                </div>
+            </div>
+            <div class="background_gradient4"></div>
+        </section>
+
+        <section class="statistics">
+            <div class="statistics__container">
+                <h2 class="statistics__title">Статистика</h2>
+                <div class="statistics__block">
+                    <div class="block_stat_row">
+                        <h2 class="statistics_block_title">85 500 000+</h2>
+                        <p class="statistics_block__description">гривень інвестовано</p>
+                    </div>
+                    <div class="block_stat_row">
+                        <h2 class="statistics_block_title" style="color:#FC0;">3000+</h2>
+                        <p class="statistics_block__description">навчальних закладів залучено</p>
+                    </div>
+                    <div class="block_stat_row">
+                        <h2 class="statistics_block_title">150+</h2>
+                        <p class="statistics_block__description">реалізованих проектів</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="advantages">
+            <div class="advantages__container">
+                <h2 class="advantages__title">Переваги для учасників</h2>
+                <div class="advantages__blocks">
+                    <div class="blocks__blockadv">
+                        <img class="block__image" src="assets/img/school.svg" alt="Block 1">
+                        <h3 class="block__title">Для навчальних закладів</h3>
+                        <p class="block__description">Отримайте ресурси для гуртків та модернізації обладнання.</p>
+                    </div>
+                    <div class="blocks__blockadv">
+                        <img class="block__image" src="assets/img/company.svg" alt="Block 2">
+                        <h3 class="block__title">Для компаній</h3>
+                        <p class="block__description">Інвестуйте в освіту та отримуйте доступ до майбутніх кадрів.</p>
+                    </div>
+                    <div class="blocks__blockadv">
+                        <img class="block__image" src="assets/img/parents.svg" alt="Block 3">
+                        <h3 class="block__title">Для батьків та студентів</h3>
+                        <p class="block__description">Знаходьте та приєднуйтесь до гуртків і проєктів.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="background_gradient3"></div>
+        </section>
+
+        <footer class="footer">
+            <div class="footer__container">
+                <p class="footer__text">© 2025 EduRise. Усі права захищені.</p>
+                <a href="mailto:info@edurise.ua" class="footer__link">info@edurise.ua</a>
+            </div>
+        </footer>
     </div>
+    <script src="js/header.js"></script>
 </body>
 </html>
