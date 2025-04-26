@@ -19,6 +19,7 @@ body {
 }
 
 .container h1 {
+  font-weight: bold;
   display: block;
   text-align: center;
   font-size: 28px;
