@@ -1,0 +1,56 @@
+@media (max-width: 768px) {
+	.main__text{
+		gap: 10px;
+	}
+	.main__description {
+		width: 100%;
+	}
+	.main__image
+	{
+		width: 50%;
+	}
+	.main__button{
+		padding: 10px;
+	}
+	.mission_title{
+		text-align: center;
+	}
+	.mission__container {
+		flex-direction: column;
+	}
+	.mission__description{
+		text-align: center;
+	}
+	.how__blocks{
+		flex-direction: column;
+		gap: 10px;
+	}
+	.blocks__block{
+		min-height: auto;
+	}
+	.blockhow__title{
+		text-align: center;
+	}
+	.advantages__title{
+		text-align: center;
+	}
+	.statistics__title{
+		text-align: center;
+	}
+	.statistics__block{
+		flex-direction: column;
+		gap: 20px;
+	}
+	.block_stat_row{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+	.statistics_block__description{
+		text-align: center;
+	}
+	.advantages__blocks{
+		flex-direction: column;
+		gap: 10px;
+	}
+}
