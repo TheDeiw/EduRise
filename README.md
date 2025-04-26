@@ -1,0 +1,2 @@
+# EduRise
+Hackathon Main Project
