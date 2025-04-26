@@ -1,0 +1,366 @@
+html{
+	scroll-behavior: smooth;
+	font-size: max(3vw, 20px);
+	font-family: Geologica;
+}
+body {
+	line-height: 1;
+	background-color: #E3F4FF;
+	margin: 0;
+	color: #000000;
+}
+
+a {
+	text-decoration: none;
+}
+
+button {
+	padding: 0;
+	border: none;
+	background: none;
+	text-decoration: none;
+	font: inherit;
+}
+
+ul,
+ol,
+li {
+	list-style: none;
+	margin: 0;
+}
+
+h1 {
+	all: unset;
+}
+
+/* ======================================== */
+.main {
+	margin-top: 15vh;
+	position: relative;
+}
+.main__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	padding: 0px 15px;
+	gap: 1vh;
+	height: 80vh;
+}
+.main__text {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 20px;
+	width: 90%;
+}
+.main__title {
+	color: #000;
+	font-family: Geologica;
+	font-size: 64px;
+	font-style: normal;
+	text-align: center;
+	font-weight: 700;
+	line-height: normal;
+	text-wrap: nowrap;
+}
+
+.main__description {
+	color: #000;
+	font-family: Geologica;
+	font-size: 20px;
+	font-style: normal;
+	text-align: center;
+	font-weight: 300;
+	line-height: normal;
+	width: 80%;
+}
+
+.main__button {
+	color: #000;
+	text-align: center;
+	font-family: Geologica;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	border-radius: 20px;
+	background: #FC0;
+	padding: 15px;
+}
+.main__image {
+	width: 15vw;
+}
+
+.background_gradient1 {
+	border-radius: 233.5px;
+	background: linear-gradient(180deg, rgba(71, 79, 236, 0.27) 0%, rgba(69, 78, 234, 0.27) 100%);
+	filter: blur(125px);
+	width: 35vw;
+	height: 50vh;
+	position: absolute;
+	transform: rotate(51.133deg);
+	top: 0;
+	z-index: -1;
+	left: 0;
+}
+.background_gradient2 {
+	border-radius: 233.5px;
+	background: rgba(255, 204, 0, 0.50);
+	filter: blur(150px);
+	width: 35vw;
+	height: 50vh;
+	position: absolute;
+	transform: rotate(51.133deg);
+	bottom: 0;
+	z-index: -1;
+	right: 0;
+
+}
+
+/* ========================================= */
+/* .mission__block{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 15px;
+} */
+.mission__container {
+	width: 60%;
+	border-radius: 20px;
+	border: 1px solid rgba(140, 138, 138, 0.50);
+	background: linear-gradient(248deg, rgba(80, 97, 255, 0.30) 0%, rgba(255, 204, 0, 0.30) 85.54%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 1rem;
+	gap: 20%;
+}
+.mission_title{
+	margin: 0;
+	width: 100%;
+	color: #000;
+	font-family: Geologica;
+	font-size: 40px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.mission__text {
+}
+.mission__description {
+	width: 100%;
+	color: #000;
+	font-family: Geologica;
+	font-size: 18px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	opacity: 0.8;
+	letter-spacing: 1.5px;
+}
+.mission__description {
+}
+.mission__image {
+	width: 50%;
+}
+
+/* ========================================= */
+
+ .how {
+	position: relative;
+}
+/* .how__container {
+}  */
+.advantages__title {
+	width: 100%;
+	color: #000;
+	font-family: Geologica;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.how__blocks {
+	display: flex;
+	padding: 10px;
+	justify-content: space-between;
+	align-items: flex-start;
+	flex: 1 0 0;
+	align-self: stretch;
+	gap: 1vw;
+
+}
+.how__blocks > * {
+	flex: 1 1 0; /* Кожен дочірній елемент займатиме однакову ширину */
+	min-width: 0; /* Запобігає "роздуттю" через контент */
+ }
+.blocks__block {
+	border-radius: 10px;
+	border: 1px solid rgba(151, 150, 150, 0.50);
+	background: rgba(255, 255, 255, 0.50);
+	padding: 0.1rem 0.5rem ;
+	min-height: 200px;
+}
+.blockhow__title {
+	color: #001AFF;
+	font-family: Geologica;
+	font-size: 24px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.blockhow__description {
+	color: rgba(0, 0, 0, 0.50);
+	text-align: center;
+	font-family: Geologica;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
+.background_gradient4{
+	border-radius: 233.5px;
+	background: linear-gradient(180deg, rgba(236, 217, 71, 0.27) 0%, rgba(231, 234, 69, 0.27) 100%);
+	filter: blur(100px);
+	position: absolute;
+	width: 70vw;
+	height: 30vh;
+	top: 50%;
+	left: 20%;
+	z-index: -10;
+}
+
+
+/* ========================================= */
+.advantages{
+	position: relative;
+}
+.advantages__title {
+	width: 100%;
+	color: #000;
+	font-family: Geologica;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.advantages__blocks {
+	display: flex;
+	padding: 10px;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 80px;
+	flex: 1 0 0;
+	align-self: stretch;
+}
+.blocks__blockadv {
+	border-radius: 10px;
+	border: 1px solid rgba(151, 150, 150, 0.50);
+	background: rgba(255, 255, 255, 0.50);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 10px;
+	padding: 0.1rem 0.5rem ;
+	min-height: 200px;
+}
+.block__image {
+	width: 30%;
+	height: auto;
+}
+.block__title {
+	color: #000;
+	text-align: center;
+	font-family: Geologica;
+	font-size: 20px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin: 0;
+}
+.block__description {
+	color: rgba(0, 0, 0, 0.50);
+	text-align: center;
+	font-family: Geologica;
+	font-size: 16px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+	margin: 0;
+}
+.background_gradient3{
+	border-radius: 233.5px;
+	background: linear-gradient(180deg, rgba(71, 79, 236, 0.27) 0%, rgba(69, 78, 234, 0.27) 100%);
+	filter: blur(100px);
+	position: absolute;
+	width: 90vw;
+	height: 30vh;
+	top: 0;
+	left: 0;
+	z-index: -1;
+
+}
+
+/* ========================================= */
+
+.statistics {
+	position: relative;
+}
+.statistics__container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.statistics__title {
+	width: 100%;
+	text-align: left;
+	color: #000;
+	font-family: Geologica;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 600;
+	line-height: normal;
+}
+.statistics__block {
+	width: 75%;
+	align-self: center;
+	border-radius: 10px;
+	border: 1px solid rgba(140, 138, 138, 0.50);
+	background: rgba(255, 255, 255, 0.50);
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	gap: 20px;
+	padding: 1rem;
+}
+.block_stat_row{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-self: stretch;
+}
+.statistics_block_title {
+	margin: 0;
+	color: #5061FF;
+	font-family: Geologica;
+	font-size: 64px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+.statistics_block__description {
+	margin: 0;
+	color: #000;
+	font-family: Geologica;
+	font-size: 32px;
+	font-style: normal;
+	font-weight: 400;
+	line-height: normal;
+}
+
