@@ -1,204 +1,102 @@
-// Приклад даних шкіл
-const schools = [
-  {
-    name: "Київська школа №1",
-    institutionType: ["school"],
-    geoFocus: ["kyiv-region"],
-    projectCategory: ["equipment", "technology"]
-  },
-  {
-    name: "Львівський коледж",
-    institutionType: ["college"],
-    geoFocus: ["lviv"],
-    projectCategory: ["programs", "scholarships"]
-  },
-  {
-    name: "Одеський університет",
-    institutionType: ["university"],
-    geoFocus: ["odesa"],
-    projectCategory: ["technology", "other"]
-  },
-  {
-    name: "Вінницька профтех",
-    institutionType: ["vocational"],
-    geoFocus: ["vinnytsia"],
-    projectCategory: ["equipment"]
-  },
-  {
-    name: "Харківська академія",
-    institutionType: ["university", "other"],
-    geoFocus: ["kharkiv"],
-    projectCategory: ["scholarships", "technology"]
-  },
-  {
-    name: "Київський ліцей №23",
-    institutionType: ["school"],
-    geoFocus: ["kyiv-region"],
-    projectCategory: ["programs", "technology"]
-  },
-  {
-    name: "Львівська школа мистецтв",
-    institutionType: ["school", "other"],
-    geoFocus: ["lviv"],
-    projectCategory: ["equipment", "other"]
-  },
-  {
-    name: "Одеська профшкола",
-    institutionType: ["vocational"],
-    geoFocus: ["odesa"],
-    projectCategory: ["scholarships"]
-  },
-  {
-    name: "Вінницький університет",
-    institutionType: ["university"],
-    geoFocus: ["vinnytsia"],
-    projectCategory: ["technology", "programs"]
-  },
-  {
-    name: "Харківський коледж техніки",
-    institutionType: ["college"],
-    geoFocus: ["kharkiv"],
-    projectCategory: ["equipment", "scholarships"]
-  }
-];
-
-// Функція для відображення шкіл
-function renderSchools(filteredSchools) {
-  const schoolGrid = document.getElementById('schoolGrid');
-  schoolGrid.innerHTML = '';
-  filteredSchools.forEach(school => {
-    const card = document.createElement('div');
-    card.className = 'school-card';
-    card.innerHTML = `
-      <h3>${school.name}</h3>
-      <p><strong>Тип:</strong> ${school.institutionType.map(type => ({
-        school: 'Школа',
-        college: 'Коледж',
-        university: 'Університет',
-        vocational: 'Професійна освіта',
-        other: 'Інше'
-      })[type]).join(', ')}</p>
-      <p><strong>Регіон:</strong> ${school.geoFocus.map(region => ({
-        vinnytsia: 'Вінницька область',
-        'kyiv-region': 'Київська область',
-        lviv: 'Львівська область',
-        odesa: 'Одеська область',
-        kharkiv: 'Харківська область'
-      })[region]).join(', ')}</p>
-      <p><strong>Категорія:</strong> ${school.projectCategory.map(cat => ({
-        equipment: 'Обладнання',
-        programs: 'Навчальні програми',
-        scholarships: 'Стипендії',
-        technology: 'Технології',
-        other: 'Інше'
-      })[cat]).join(', ')}</p>
-    `;
-    schoolGrid.appendChild(card);
-  });
-}
-
-// Фільтрація шкіл
-function filterSchools() {
-  const searchValue = document.getElementById('searchInput').value.toUpperCase();
-  const institutionTypes = Array.from(document.querySelectorAll('input[name="institutionTypeFilter"]:checked')).map(cb => cb.value);
-  const geoFocuses = Array.from(document.querySelectorAll('input[name="geoFocusFilter"]:checked')).map(cb => cb.value);
-  const categories = Array.from(document.querySelectorAll('.category-tag')).map(tag => tag.dataset.value);
-
-  const filteredSchools = schools.filter(school => {
-    const matchesSearch = school.name.toUpperCase().includes(searchValue);
-    const matchesInstitutionType = institutionTypes.length === 0 || institutionTypes.some(type => school.institutionType.includes(type));
-    const matchesGeoFocus = geoFocuses.length === 0 || geoFocuses.some(region => school.geoFocus.includes(region));
-    const matchesCategory = categories.length === 0 || categories.some(cat => school.projectCategory.includes(cat));
-    return matchesSearch && matchesInstitutionType && matchesGeoFocus && matchesCategory;
-  });
-
-  renderSchools(filteredSchools);
-}
-
-// Логіка для селекторів із чекбоксами
-function setupCheckboxSelector(selectBoxId, dropdownId, checkboxName) {
-  const selectBox = document.getElementById(selectBoxId);
-  const dropdown = document.getElementById(dropdownId);
-  const checkboxes = document.querySelectorAll(`input[name="${checkboxName}"]`);
-
-  function updateSelectBox() {
-    const selected = Array.from(checkboxes).filter(cb => cb.checked).map(cb => cb.parentElement.textContent.trim());
-    selectBox.textContent = selected.length > 0 ? selected.join(', ') : selectBoxId.includes('institutionType') ? 'Оберіть тип' : 'Оберіть регіон';
-    filterSchools();
-  }
+document.addEventListener('DOMContentLoaded', () => {
+  // Логіка для випадаючого списку (Тип установи)
+  const selectBox = document.getElementById('selectBox');
+  const selectDropdown = document.getElementById('selectDropdown');
+  const institutionTypeInput = document.getElementById('institutionType');
+  const institutionTypeOtherInput = document.getElementById('institutionTypeOtherInput');
+  const institutionTypeCustom = document.getElementById('institutionTypeCustom');
 
   selectBox.addEventListener('click', () => {
-    dropdown.classList.toggle('hidden');
+    selectDropdown.classList.toggle('hidden');
   });
 
-  checkboxes.forEach(checkbox => {
-    checkbox.addEventListener('change', updateSelectBox);
-  });
-
-  document.addEventListener('click', (e) => {
-    if (!selectBox.contains(e.target) && !dropdown.contains(e.target)) {
-      dropdown.classList.add('hidden');
-    }
-  });
-
-  updateSelectBox();
-}
-
-// Логіка для пошуку категорій
-function setupCategoryFilter() {
-  const input = document.getElementById('categoryFilterInput');
-  const ul = document.getElementById('categoryFilterList');
-  const customSelect = input.closest('.custom-select');
-  const selectedCategories = document.getElementById('selectedCategories');
-
-  input.addEventListener('click', (e) => {
-    e.stopPropagation();
-    ul.classList.toggle('hidden');
-  });
-
-  input.addEventListener('keyup', () => {
-    const filter = input.value.toUpperCase();
-    const li = ul.getElementsByTagName('li');
-    for (let i = 0; i < li.length; i++) {
-      const a = li[i].getElementsByTagName('a')[0];
-      const txtValue = a.textContent || a.innerText;
-      li[i].classList.toggle('hidden', txtValue.toUpperCase().indexOf(filter) === -1);
-    }
-  });
-
-  ul.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A') {
-      e.preventDefault();
+  selectDropdown.addEventListener('click', (e) => {
+    if (e.target.tagName === 'LI' && e.target.dataset.value) {
       const value = e.target.dataset.value;
       const text = e.target.textContent;
-      if (!selectedCategories.querySelector(`.category-tag[data-value="${value}"]`)) {
-        const tag = document.createElement('div');
-        tag.className = 'category-tag';
-        tag.dataset.value = value;
-        tag.innerHTML = `${text} <span class="remove-tag">×</span>`;
-        selectedCategories.appendChild(tag);
-        filterSchools();
+      selectBox.textContent = text;
+      institutionTypeInput.value = value;
+      selectDropdown.classList.add('hidden');
+      institutionTypeOtherInput.classList.toggle('hidden', value !== 'other');
+      if (value !== 'other') {
+        institutionTypeCustom.value = '';
       }
     }
   });
 
-  selectedCategories.addEventListener('click', (e) => {
-    if (e.target.className === 'remove-tag') {
-      e.target.parentElement.remove();
-      filterSchools();
-    }
-  });
-
+  // Закриття списку при кліку поза ним
   document.addEventListener('click', (e) => {
-    if (!customSelect.contains(e.target) && !selectedCategories.contains(e.target)) {
-      ul.classList.add('hidden');
+    if (!selectBox.contains(e.target) && !selectDropdown.contains(e.target)) {
+      selectDropdown.classList.add('hidden');
     }
   });
-}
 
-// Ініціалізація
-setupCheckboxSelector('institutionTypeSelectBox', 'institutionTypeSelectDropdown', 'institutionTypeFilter');
-setupCheckboxSelector('geoFocusSelectBox', 'geoFocusSelectDropdown', 'geoFocusFilter');
-setupCategoryFilter();
-document.getElementById('searchInput').addEventListener('keyup', filterSchools);
-renderSchools(schools);
+  // Логіка для показу/приховання пароля
+  const togglePasswordButtons = document.querySelectorAll('.toggle-password');
+  togglePasswordButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      const targetId = button.dataset.target;
+      const input = document.getElementById(targetId);
+      const eyeImg = button.querySelector('.button-eye');
+      if (input.type === 'password') {
+        input.type = 'text';
+        eyeImg.src = 'assets/img/eye-on.svg';
+        eyeImg.alt = 'Приховати пароль';
+      } else {
+        input.type = 'password';
+        eyeImg.src = 'assets/img/eye-off.svg';
+        eyeImg.alt = 'Показати пароль';
+      }
+    });
+  });
+
+  // Обробка відправки форми
+  const form = document.getElementById('registerForm');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+
+    const formData = new FormData(form);
+    const password = formData.get('password');
+    const confirmPassword = formData.get('confirmPassword');
+    const institutionType = formData.get('institutionType');
+
+    // Валідація пароля
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+    if (!passwordRegex.test(password)) {
+      alert('Пароль має містити принаймні 8 символів, великі та малі літери, цифри.');
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      alert('Паролі не збігаються.');
+      return;
+    }
+
+    // Валідація типу установи
+    if (institutionType === 'other' && !formData.get('institutionTypeCustom')) {
+      alert('Вкажіть тип установи для "Інше".');
+      return;
+    }
+
+    // Збереження даних
+    const registration = {
+      companyName: formData.get('companyName'),
+      institutionType: institutionType === 'other' ? formData.get('institutionTypeCustom') : institutionType,
+      location: formData.get('location'),
+      contactName: formData.get('contactName'),
+      contactEmail: formData.get('contactEmail'),
+      contactPhone: formData.get('contactPhone'),
+      password: password
+    };
+
+    // Збереження у localStorage
+    let registrations = JSON.parse(localStorage.getItem('registrations') || '[]');
+    registrations.push(registration);
+    localStorage.setItem('registrations', JSON.stringify(registrations));
+
+    alert('Реєстрацію успішно завершено!');
+    form.reset();
+    selectBox.textContent = 'Оберіть тип';
+    institutionTypeOtherInput.classList.add('hidden');
+  });
+});
