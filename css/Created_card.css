@@ -8,6 +8,11 @@ body {
   font-family: Geologica;
 
 }
+a {
+  text-decoration: none;
+  display: block;
+  text-align: center;
+}
 
 .container {
   background-color: white;

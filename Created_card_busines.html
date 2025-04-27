@@ -7,12 +7,11 @@
   <title>Форма для інвестицій</title>
   <link rel="stylesheet" href="css/Created_card.css">
   <link rel="stylesheet" href="css/header-footer.css">
-  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
   <header class="header">
     <div class="header__container">
-      <a href="#" class="header__logo"> <img class="logo__image" src="assets/favicon/Favicon.svg"> </a>
+      <a href="index.html" class="header__logo"> <img class="logo__image" src="assets/favicon/Favicon.svg"> </a>
               <button class="header__menu_icon">
                   <span></span>
                   <span></span>
@@ -21,20 +20,20 @@
       <nav class="header__menu menu">
         <ul class="menu__list">
           <li class="menu__item">
-            <a href="#" class="menu__link" data-key="about_me">Головна</a>
+            <a href="index.html" class="menu__link" data-key="about_me">Головна</a>
           </li>
           <li class="menu__item">
-            <a href="#" class="menu__link" data-key="games">Реалізовані проєкти</a>
+            <a href="Search.html" class="menu__link" data-key="games">Реалізовані проєкти</a>
           </li>
           <li class="menu__item">
-            <a href="#" class="menu__link" data-key="projects">Заявки</a>
+            <a href="Search.html" class="menu__link" data-key="projects">Заявки</a>
           </li>
                       <li class="menu__item">
-            <a href="#" style="color:blue" class="menu__link" data-key="projects">Подати заявку</a>
+            <a href="Created_card_busines.html" style="color:blue" class="menu__link" data-key="projects">Подати заявку</a>
           </li>
         </ul>
       </nav>
-              <a href="" class="header__auth">Авторизація</a>
+              <a href="account_business.html" class="header__auth">😊</a>
     </div>
   </header>
   <div class="container">
@@ -44,13 +43,13 @@
       <!-- Назва пропозиції -->
       <div class="form-group">
         <label for="proposalName">Назва пропозиції <span class="required">*</span></label>
-        <input type="text" id="proposalName" name="proposalName" placeholder="Наприклад, створити гурток робототехніки" required>
+        <input type="text" id="proposalName" name="proposalName" placeholder="Наприклад, створити гурток робототехніки" >
       </div>
 
       <!-- Опис пропозиції -->
       <div class="form-group">
         <label for="proposalDescription">Опис пропозиції <span class="required">*</span></label>
-        <textarea id="proposalDescription" name="proposalDescription" rows="4" required placeholder="Детальний опис мети, потреб, впливу на освіту"></textarea>
+        <textarea id="proposalDescription" name="proposalDescription" rows="4"  placeholder="Детальний опис мети, потреб, впливу на освіту"></textarea>
       </div>
 
       <!-- Орієнтація на тип закладу -->
@@ -131,13 +130,13 @@
       <!-- Термін реалізації -->
       <div class="form-group">
         <label for="timeline">Термін реалізації</label>
-        <input type="text" id="timeline" name="timeline" placeholder="Очікуваний термін реалізації" required>
+        <input type="text" id="timeline" name="timeline" placeholder="Очікуваний термін реалізації" >
       </div>
 
       <!-- Очікувані результати -->
       <div class="form-group">
         <label for="expectedResults">Очікувані результати</label>
-        <textarea id="expectedResults" name="expectedResults" rows="4" required placeholder="Конкретні результати чи показники успіху"></textarea>
+        <textarea id="expectedResults" name="expectedResults" rows="4"  placeholder="Конкретні результати чи показники успіху"></textarea>
       </div>
 
       <!-- Додаткові матеріали -->
@@ -148,7 +147,7 @@
 
       <!-- Кнопка відправки -->
       <div class="form-group">
-        <button type="submit" class="submit-btn">Відправити</button>
+        <a href="Search.html" class="submit-btn">Відправити</a>
       </div>
     </form>
   </div>
