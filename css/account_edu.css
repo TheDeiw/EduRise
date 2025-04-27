@@ -1,0 +1,99 @@
+body {
+	font-family: Geologica;
+    margin: 0;
+    padding: 20px;
+    background-color: #f4f4f4;
+}
+
+.container {
+    margin: 11vh 9vw;
+}
+
+h1 {
+    color: #333;
+}
+
+.profile-section {
+    display: flex;
+    margin: 20px 0;
+    gap: 20px;
+    align-items: stretch; /* Забезпечує однакову висоту для дочірніх елементів */
+}
+
+.profile-image {
+    flex: 0 0 auto;
+}
+
+.profile-image img {
+    width: 50vw; /* Залишаємо ширину як у вашому коді */
+    height: 50vh; /* Залишаємо висоту як у вашому коді */
+    object-fit: cover;
+    border-radius: 10px;
+    display: block;
+}
+
+.profile-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Розподіляє поля рівномірно по вертикалі */
+    background: white; /* Додаємо фон для кращого вигляду */
+    padding: 15px;
+    border-radius: 10px;
+    height: 46vh; /* Забезпечує, що блок займає всю висоту .profile-section */
+}
+
+.detail-item {
+    margin: 10px 0;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.detail-item label {
+    font-weight: bold;
+    width: 150px;
+}
+
+.detail-item span {
+    flex: 1;
+}
+
+.edit-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+h2 {
+    margin-top: 30px;
+    color: #333;
+}
+
+.requests-section, .responses-section {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+.request-card, .response-card {
+    background: white;
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.request-card:hover, .response-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.request-card h3, .response-card h3 {
+    margin: 0 0 10px;
+    color: #333;
+}
+
+.request-card p, .response-card p {
+    margin: 5px 0;
+}
