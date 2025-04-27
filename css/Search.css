@@ -28,12 +28,23 @@ body {
   gap: 20px;
 }
 
+
+
 .sidebar {
   width: 25%;
   background-color: white;
   padding: 20px;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+    align-items: center;
+  }
+  .sidebar {
+    width: 80%;
+  }
 }
 
 .sidebar h2 {
