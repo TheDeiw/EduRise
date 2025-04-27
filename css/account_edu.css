@@ -219,8 +219,15 @@ h2 {
 .menu__link:hover {
     color: #2563eb;
 }
+button {
+	padding: 0;
+	border: none;
+	background: none;
+	text-decoration: none;
+	font: inherit;
+}
 
-.header__auth {
+/* .header__auth {
     color: #2563eb;
     text-decoration: none;
     font-size: 1rem;
@@ -228,7 +235,7 @@ h2 {
 
 .header__auth:hover {
     color: #1d4ed8;
-}
+} */
 
 .footer {
     background: #f9fafb;
@@ -304,13 +311,13 @@ h2 {
         font-size: 1.5rem;
     }
 
-    .header__menu {
+    /* .header__menu {
         display: none;
     }
 
     .header__menu_icon {
         display: flex;
-    }
+    } */
 
     .menu__list {
         flex-direction: column;
