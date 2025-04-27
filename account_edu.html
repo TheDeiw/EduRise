@@ -1,22 +1,19 @@
 <!DOCTYPE html>
 <html lang="uk">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Профіль бізнес установи</title>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap"
-        rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Geologica:wght@100..900&family=Lexend+Deca:wght@100..900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="css/account_edu.css">
     <link rel="stylesheet" href="css/header-footer.css">
 </head>
-
 <body>
     <header class="header">
         <div class="header__container">
-            <a href="#" class="header__logo"> <img class="logo__image" src="assets/favicon/Favicon.svg"> </a>
+            <a href="#" class="header__logo">
+                <img class="logo__image" src="assets/favicon/Favicon.svg" alt="Logo">
+            </a>
             <button class="header__menu_icon">
                 <span></span>
                 <span></span>
@@ -34,104 +31,122 @@
                         <a href="#" class="menu__link" data-key="projects">Заявки</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#" style="color:blue" class="menu__link" data-key="projects">Подати заявку</a>
+                        <a href="#" class="menu__link text-blue-600" data-key="projects">Подати заявку</a>
                     </li>
                 </ul>
             </nav>
-            <a href="" class="header__auth">Авторизація</a>
+            <a href="#" class="header__auth">Авторизація</a>
         </div>
     </header>
-    <div class="container">
-        <h1 id="businessName">Назва установи</h1>
-        <div class="profile-section">
-            <div class="profile-image">
-                <img src="assets/img/School.jpg" alt="Фото установи">
-            </div>
-            <div class="profile-details">
-                <div class="detail-item">
-                    <label>Назва установи:</label>
-                    <span id="name">Назва установи</span>
-                    <button class="edit-btn" onclick="makeEditable('name')">✏️</button>
+    <div class="page-container">
+        <div class="container">
+            <h1 id="businessName">Назва установи</h1>
+            <div class="profile-section">
+                <div class="profile-image">
+                    <img src="assets/img/School.jpg" alt="Фото установи">
                 </div>
-                <div class="detail-item">
-                    <label>Тип установи:</label>
-                    <span id="type">Тип установи</span>
-                    <button class="edit-btn" onclick="makeEditable('type')">✏️</button>
+                <div class="profile-details">
+                    <div class="detail-item">
+                        <label>Назва установи:</label>
+                        <span id="name">Назва установи</span>
+                        <button class="edit-btn" onclick="makeEditable('name')">
+                            <img src="assets/img/pen.png" alt="Edit" class="edit-icon">
+                        </button>
+                    </div>
+                    <div class="detail-item">
+                        <label>Тип установи:</label>
+                        <span id="type">Тип установи</span>
+                        <button class="edit-btn" onclick="makeEditable('type')">
+                            <img src="assets/img/pen.png" alt="Edit" class="edit-icon">
+                        </button>
+                    </div>
+                    <div class="detail-item">
+                        <label>Місцезнаходження:</label>
+                        <span id="location">Місцезнаходження</span>
+                        <button class="edit-btn" onclick="makeEditable('location')">
+                            <img src="assets/img/pen.png" alt="Edit" class="edit-icon">
+                        </button>
+                    </div>
+                    <div class="detail-item">
+                        <label>Ім’я контактної особи:</label>
+                        <span id="contactName">Ім’я</span>
+                        <button class="edit-btn" onclick="makeEditable('contactName')">
+                            <img src="assets/img/pen.png" alt="Edit" class="edit-icon">
+                        </button>
+                    </div>
+                    <div class="detail-item">
+                        <label>Електронна пошта:</label>
+                        <span id="email">email@example.com</span>
+                        <button class="edit-btn" onclick="makeEditable('email')">
+                            <img src="assets/img/pen.png" alt="Edit" class="edit-icon">
+                        </button>
+                    </div>
+                    <div class="detail-item">
+                        <label>Телефон:</label>
+                        <span id="phone">+380123456789</span>
+                        <button class="edit-btn" onclick="makeEditable('phone')">
+                            <img src="assets/img/pen.png" alt="Edit" class="edit-icon">
+                        </button>
+                    </div>
                 </div>
-                <div class="detail-item">
-                    <label>Місцезнаходження:</label>
-                    <span id="location">Місцезнаходження</span>
-                    <button class="edit-btn" onclick="makeEditable('location')">✏️</button>
+            </div>
+            <h2>Опубліковані заявки</h2>
+            <div class="requests-section">
+                <div class="request-card">
+                    <h3>Назва пропозиції 1</h3>
+                    <p><strong>Орієнтація:</strong> Тип закладу</p>
+                    <p><strong>Категорія:</strong> Категорія проєкту</p>
+                    <p><strong>Географічний фокус:</strong> Географія</p>
                 </div>
-                <div class="detail-item">
-                    <label>Ім’я контактної особи:</label>
-                    <span id="contactName">Ім’я</span>
-                    <button class="edit-btn" onclick="makeEditable('contactName')">✏️</button>
+                <div class="request-card">
+                    <h3>Назва пропозиції 2</h3>
+                    <p><strong>Орієнтація:</strong> Тип закладу</p>
+                    <p><strong>Категорія:</strong> Категорія проєкту</p>
+                    <p><strong>Географічний фокус:</strong> Географія</p>
                 </div>
-                <div class="detail-item">
-                    <label>Електронна пошта:</label>
-                    <span id="email">email@example.com</span>
-                    <button class="edit-btn" onclick="makeEditable('email')">✏️</button>
-                </div>
-                <div class="detail-item">
-                    <label>Телефон:</label>
-                    <span id="phone">+380123456789</span>
-                    <button class="edit-btn" onclick="makeEditable('phone')">✏️</button>
+                <div class="request-card">
+                    <h3>Назва пропозиції 3</h3>
+                    <p><strong>Орієнтація:</strong> Тип закладу</p>
+                    <p><strong>Категорія:</strong> Категорія проєкту</p>
+                    <p><strong>Географічний фокус:</strong> Географія</p>
                 </div>
             </div>
-        </div>
-
-        <h2>Опубліковані заявки</h2>
-        <div class="requests-section">
-            <div class="request-card">
-                <h3>Назва пропозиції 1</h3>
-                <p><strong>Орієнтація:</strong> Тип закладу</p>
-                <p><strong>Категорія:</strong> Категорія проєкту</p>
-                <p><strong>Географічний фокус:</strong> Географія</p>
-            </div>
-            <div class="request-card">
-                <h3>Назва пропозиції 2</h3>
-                <p><strong>Орієнтація:</strong> Тип закладу</p>
-                <p><strong>Категорія:</strong> Категорія проєкту</p>
-                <p><strong>Географічний фокус:</strong> Географія</p>
-            </div>
-            <div class="request-card">
-                <h3>Назва пропозиції 2</h3>
-                <p><strong>Орієнтація:</strong> Тип закладу</p>
-                <p><strong>Категорія:</strong> Категорія проєкту</p>
-                <p><strong>Географічний фокус:</strong> Географія</p>
-            </div>
-        </div>
-
-        <h2>Відповіді на заявки</h2>
-        <div class="responses-section">
-            <div class="response-card">
-                <h3>Назва закладу 1</h3>
-                <p><strong>Опис:</strong> Опис пропозиції</p>
-                <p><strong>Категорія:</strong> Категорія проєкту</p>
-            </div>
-            <div class="response-card">
-                <h3>Назва закладу 2</h3>
-                <p><strong>Опис:</strong> Опис пропозиції</p>
-                <p><strong>Категорія:</strong> Категорія проєкту</p>
-            </div>
-            <div class="response-card">
-                <h3>Назва закладу 2</h3>
-                <p><strong>Опис:</strong> Опис пропозиції</p>
-                <p><strong>Категорія:</strong> Категорія проєкту</p>
+            <h2>Відповіді на заявки</h2>
+            <div class="responses-section">
+                <div class="response-card">
+                    
+                    <h3>Назва закладу 1</h3>
+                    <div class="card-title">
+                        <img src="assets/img/School2.jpg" alt="Icon" class="card-icon">
+                    </div>
+                    <p><strong>Опис:</strong> Опис пропозиції</p>
+                    <p><strong>Категорія:</strong> Категорія проєкту</p>
+                </div>
+                <div class="response-card">
+                    <h3>Назва закладу 2</h3>
+                    <div class="card-title">
+                        <img src="assets/img/School.jpg" alt="Icon" class="card-icon">
+                    </div>
+                    <p><strong>Опис:</strong> Опис пропозиції</p>
+                    <p><strong>Категорія:</strong> Категорія проєкту</p>
+                </div>
+                <div class="response-card">
+                    <h3>Назва закладу 3</h3>
+                    <div class="card-title">
+                        <img src="assets/img/School2.jpg" alt="Icon" class="card-icon">
+                    </div>
+                    <p><strong>Опис:</strong> Опис пропозиції</p>
+                    <p><strong>Категорія:</strong> Категорія проєкту</p>
+                </div>
             </div>
         </div>
     </div>
-    <div class="wrapper">
-        <footer class="footer">
-            <div class="footer__container">
-                <p class="footer__text">© 2025 EduRise. Усі права захищені.</p>
-                <a href="mailto:info@edurise.ua" class="footer__link">info@edurise.ua</a>
-            </div>
-        </footer>
-    </div>
+    <footer class="footer">
+        <div class="footer__container">
+            <p class="footer__text">© 2025 EduRise. Усі права захищені.</p>
+            <a href="mailto:info@edurise.ua" class="footer__link">info@edurise.ua</a>
+        </div>
+    </footer>
     <script src="js/account_edu.js"></script>
-    <script src="js/header.js"></script>
 </body>
-
 </html>

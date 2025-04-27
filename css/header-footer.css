@@ -8,6 +8,13 @@ body {
 	margin: 0;
 	color: #000000;
 }
+a {
+	text-decoration: none;
+}
+.main {
+	margin-top: 15vh;
+	position: relative;
+}
 /* ======================================= */
 .wrapper {
 	min-height: 100%;

@@ -5,61 +5,71 @@ document.addEventListener('DOMContentLoaded', () => {
       name: "Київська школа №1",
       institutionType: ["school"],
       geoFocus: ["kyiv-region"],
-      projectCategory: ["equipment", "technology"]
+      projectCategory: ["equipment", "technology"],
+      image: "assets/img/School.jpg" // Додано поле для зображення
     },
     {
       name: "Львівський коледж",
       institutionType: ["college"],
       geoFocus: ["lviv"],
-      projectCategory: ["programs", "scholarships"]
+      projectCategory: ["programs", "scholarships"],
+      image: "assets/img/School.jpg"
     },
     {
       name: "Одеський університет",
       institutionType: ["university"],
       geoFocus: ["odesa"],
-      projectCategory: ["technology", "other"]
+      projectCategory: ["technology", "other"],
+      image: "assets/img/School.jpg"
     },
     {
       name: "Вінницька профтех",
       institutionType: ["vocational"],
       geoFocus: ["vinnytsia"],
-      projectCategory: ["equipment"]
+      projectCategory: ["equipment"],
+      image: "assets/img/School.jpg"
     },
     {
       name: "Харківська академія",
       institutionType: ["university", "other"],
       geoFocus: ["kharkiv"],
-      projectCategory: ["scholarships", "technology"]
+      projectCategory: ["scholarships", "technology"],
+      image: "assets/img/School.jpg"
     },
     {
       name: "Київський ліцей №23",
       institutionType: ["school"],
       geoFocus: ["kyiv-region"],
-      projectCategory: ["programs", "technology"]
+      projectCategory: ["programs", "technology"],
+      image: "assets/img/School.jpg"
     },
     {
       name: "Львівська школа мистецтв",
       institutionType: ["school", "other"],
       geoFocus: ["lviv"],
-      projectCategory: ["equipment", "other"]
+      projectCategory: ["equipment", "other"],
+      image: "assets/img/School.jpg"
     },
     {
       name: "Одеська профшкола",
       institutionType: ["vocational"],
       geoFocus: ["odesa"],
-      projectCategory: ["scholarships"]
+      projectCategory: ["scholarships"],
+      image: "assets/img/School.jpg"
     },
     {
       name: "Вінницький університет",
       institutionType: ["university"],
       geoFocus: ["vinnytsia"],
-      projectCategory: ["technology", "programs"]
+      projectCategory: ["technology", "programs"],
+      image: "assets/img/School.jpg"
     },
     {
       name: "Харківський коледж техніки",
       institutionType: ["college"],
       geoFocus: ["kharkiv"],
-      projectCategory: ["equipment", "scholarships"]
+      projectCategory: ["equipment", "scholarships"],
+      image: "assets/img/School.jpg"
     }
   ];
 
@@ -69,7 +79,8 @@ document.addEventListener('DOMContentLoaded', () => {
     name: proposal.proposalName,
     institutionType: JSON.parse(proposal.institutionType || '[]'),
     geoFocus: [proposal.geoFocus],
-    projectCategory: proposal.Category ? [proposal.Category] : []
+    projectCategory: proposal.Category ? [proposal.Category] : [],
+    image: "https://via.placeholder.com/150" // Додано зображення для пропозицій із localStorage
   }));
 
   // Об'єднання статичних даних і даних із localStorage
@@ -85,6 +96,7 @@ document.addEventListener('DOMContentLoaded', () => {
       card.className = 'school-card';
       card.innerHTML = `
         <h3>${school.name}</h3>
+        <img src="${school.image}" alt="${school.name}" class="school-image">
         <p><strong>Тип:</strong> ${school.institutionType.map(type => ({
           school: 'Школа',
           college: 'Коледж',
